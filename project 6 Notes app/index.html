@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-btn">☰</button>
+            <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" alt="Keep" class="logo-img">
+            <h1 class="logo">Keep</h1>
+        </div>
+        <div class="header-center">
+            <input type="text" class="search-bar" id="searchBar" placeholder="Search">
+        </div>
+        <div class="header-right">
+            <button class="icon-btn" id="bgToggle" title="Background options">🎨</button>
+            <button class="icon-btn" id="themeToggle" title="Toggle theme">🌙</button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <button class="sidebar-btn active" data-category="all">
+                <span class="icon">💡</span>
+                <span>Notes</span>
+            </button>
+            <button class="sidebar-btn" data-category="pinned">
+                <span class="icon">📌</span>
+                <span>Pinned</span>
+            </button>
+            <button class="sidebar-btn" data-category="personal">
+                <span class="icon">👤</span>
+                <span>Personal</span>
+            </button>
+            <button class="sidebar-btn" data-category="work">
+                <span class="icon">💼</span>
+                <span>Work</span>
+            </button>
+            <button class="sidebar-btn" data-category="ideas">
+                <span class="icon">✨</span>
+                <span>Ideas</span>
+            </button>
+        </aside>
+
+        <main class="content">
+            <div class="note-input-container">
+                <button class="note-input" id="addNoteBtn">
+                    <span>Take a note...</span>
+                </button>
+            </div>
+
+            <div class="notes-section" id="notesGrid">
+                <div class="empty-state">
+                    <div class="empty-icon">💡</div>
+                    <h2>Notes you add appear here</h2>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal" id="bgModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Background options</h2>
+                <button class="close-btn" id="closeBgModal">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="bg-grid">
+                    <div class="bg-option" data-bg="gradient1">
+                        <div class="bg-preview bg1"></div>
+                        <span>Ocean Blue</span>
+                    </div>
+                    <div class="bg-option" data-bg="gradient2">
+                        <div class="bg-preview bg2"></div>
+                        <span>Purple Dream</span>
+                    </div>
+                    <div class="bg-option" data-bg="gradient3">
+                        <div class="bg-preview bg3"></div>
+                        <span>Sunset Orange</span>
+                    </div>
+                    <div class="bg-option" data-bg="gradient4">
+                        <div class="bg-preview bg4"></div>
+                        <span>Forest Green</span>
+                    </div>
+                    <div class="bg-option" data-bg="gradient5">
+                        <div class="bg-preview bg5"></div>
+                        <span>Pink Blush</span>
+                    </div>
+                    <div class="bg-option" data-bg="gradient6">
+                        <div class="bg-preview bg6"></div>
+                        <span>Midnight Dark</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="noteModal">
+        <div class="modal-content note-modal">
+            <input type="text" class="note-title-input" id="noteTitle" placeholder="Title">
+            <textarea class="note-content-input" id="noteContent" placeholder="Take a note..."></textarea>
+            <div class="note-modal-footer">
+                <div class="note-actions-left">
+                    <select class="category-select" id="noteCategory">
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="ideas">Ideas</option>
+                    </select>
+                </div>
+                <button class="btn-close" id="closeModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
